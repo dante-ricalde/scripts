@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+for var1 in Bread Meat Dairy Vegetables Fruit
+do
+	echo One of the main food groups is $var1
+done

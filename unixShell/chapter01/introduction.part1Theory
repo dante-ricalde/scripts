@@ -1,0 +1,12 @@
+# W H A T   I S   A   S H E L L ?
+
+	. A shell is simply a program that is used to start other programs.
+	. All operating systems have shells.
+	. Command-line shells also provide certain built-in features to the user (eg. cd and ls > file) 
+
+# W H A T   I S   A   S H E L L   S C R I P ?
+	
+	. Some of the files on a UNIX system are deemed executable. These can be thought of as programs. 
+	. Some of these programs are compiled from source code (such as C). These are sometimes known as binary executables.
+	. Others contain only text. These are scripts
+	. There are many different interpreters for scripts, such as awk, sed, perl and others. The Bourne shell is simply one such interpreter (albeit the most common)

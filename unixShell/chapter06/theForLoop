@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+# ********************************** T H E      F O R      L O O P ************************************************
+	. There is a second type of loop available in the Bourne shell, called the for loop
+	. It causes a variable to be set to a given sequence of values, and then executes a code block once for each value, as follows:
+		for var1 in Bread Meat Dairy Vegetables Fruit
+		do
+			echo One of the main food groups is $var1
+		done
+	. The for loop is often used to run through a series of filenames, as follows:
+		for fname in *.txt
+		do
+			[ -s $fname ] && cp $fname backups
+		done

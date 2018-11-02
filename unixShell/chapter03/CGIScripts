@@ -1,0 +1,12 @@
+#/usr/bin/sh
+################## C G I    Scripts #########################
+
+	. A GGI program is a program that is used to provide interactivity, automation or database connectivity to a web site
+	. A CGI program can be any type of program, including Bourne shell scripts: c script, perl script, bource shell script, etc
+	. For a Bourne shell script to act as a CGI script, it must have the following attributes:
+
+		- It must be executable
+		- It must begin with the line #!/bin/sh
+		- Any output produced must be recognised as a valid HTTP stream (anything that would ordinarily go to the terminal, to the screen). This requires that Standard Output begin with a line such as the following:
+		Content-type: text/html # it can be html or text, is up to you. You must put Content-type independently of the type.
+			

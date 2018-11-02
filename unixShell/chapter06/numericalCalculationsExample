@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+expr 3 \* 4
+
+# using variables
+a=15
+b=3
+c=`expr $a / $b`
+echo $c

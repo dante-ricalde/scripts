@@ -1,0 +1,65 @@
+#!/usr/bin/sh
+###################################### T H E    C A S E    S T A T E M E N T #################################
+	. One common use of the if/elif/else statment is to compare the value of a variable to a known set of values. If there are more than two or three values, this can involve considerable code:
+
+	if [ $var1 = val1 ]
+	then
+		code for case 1
+	elif [ $var1 = val2 ]
+	then
+		code for case 2
+	elif [ $var1 = val3 ]
+	then
+		code for case 3
+	elif [ $var1 = val4 ]
+	then
+		etc
+	
+	. A language construct called the case statement was created to make writing this sort of code easier
+	. The case statement looks like this
+		case $var1 in
+			val1)
+				code for case 1
+				;;
+			val2)
+				code for case 2
+				;;
+			val3)
+				code for case 3
+				;;
+		esac	
+	. The case statement has a similar construct to the "else" clause of the "if" statement - simply create a case called *
+		case $var1 in
+			val1)
+				code for case 1
+				;;
+			...
+			*)
+				code for any case that is not covered above
+				;;
+		esac
+	. It is possible to cause the same code to be executed in many different cases, as follows:
+		case $var1 in
+			val1|val2|val3)
+				code for cases 1-3
+				;;
+			...
+	. It is possible to use wilcard characters to match values to variables, as follows:
+		case $var1 in
+			d*)
+				code for anything that starts with d
+				;;
+			...
+	
+	. Notes on using case:
+		. Syntactically speaking, the "case" statement is complicated - there are many language elements to remember and get right:
+			. case
+			. in 
+			. esac
+			. )
+			. ;;
+			. |
+			. wildcards
+
+			Nevertheless, it is usually preferable to using a series of if...elif...elif...else clauses
+		. Unlike the "if" statement, the case statement has nothing to do with true|false and exit statuses.

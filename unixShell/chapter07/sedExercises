@@ -1,0 +1,29 @@
+#!/usr/bin/sh
+echo "substitute the first occurrence of \"abc\" to \"***\" on each line of the file abcFile"
+sed 's/abc/***/' abcFile
+echo "two action on each line of the file abcFile"
+sed -e 's/abc/Bourne Again Shell/' -e s/jd/ERROR/ abcFile
+echo 
+echo "change all occurrences of \"abc\" to \"***\" on each line of the file abcFile"
+sed -e 's/abc/***/g' abcFile
+echo 
+echo "change the first occurrence of abc to *** on each line of the file abcFile only for lines 1-3"
+sed -e '1,3s/abc/***/' abcFile
+echo
+echo "change the first occurrence of abc to *** on each line of the file abcFile from line 5 onwards"
+sed -e '5,$s/abc/***/' abcFile # from line 5 to $ (the last line of input)
+echo
+echo deleting the lines 1-5 of the file abcFile
+sed -e '1,5d' abcFile
+echo
+echo delete all lines with 'abc' in them
+sed -e '/abc/d' abcFile
+echo
+echo delete all the lines of the file abcFile except the lines 5 onwards
+sed -e '5,$!d' abcFile
+echo
+echo Do not delete the lines that contain the word 'abc'
+sed -e '/abc/!d' abcFile
+echo
+echo executing sedscript file that contains sed commands on the file sedscriptTestFile
+cat sedscriptTestFile | sedscript

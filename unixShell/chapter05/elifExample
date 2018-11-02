@@ -1,0 +1,12 @@
+#!/usr/bin/sh
+file="kkFile"
+echo $file
+if ls $file > /dev/null 2>&1
+then
+	echo Sorry, the file already exists
+elif who > $file
+then
+	echo $file now contains the user list
+else
+	echo Could not create $file
+fi

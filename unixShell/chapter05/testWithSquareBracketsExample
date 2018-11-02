@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+var1=10000
+max=100
+if [ $var1 -gt $max ]
+then
+	echo That value is too large
+fi

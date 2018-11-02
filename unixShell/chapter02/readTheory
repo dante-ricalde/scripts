@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+####################################### T H E    R E A D    C O M M A N D ************************
+
+	. read is a shell built-in command for reading from Standard Input (usually the keyboard) and storing the information in shell variables.
+	. It is mostly used to receive the answers to questions and prompts issued by the script.
+	. For example: read name
+       		       Mark Virtue
+	. read can break the line of input into several variables, as follows:
+		read firstname surname
+		Mark Virtue
+	. The shell variable firstname contains the value "Mark" and surname contains the value "Virtue"
+	. Input is separated by spaces and tabs
+	. If more words are provided than there are variables, the extra words are added to the last variable.
+	. It not extra words are provided, the extra variables will contain nothing.

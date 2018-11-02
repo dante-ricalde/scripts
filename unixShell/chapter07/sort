@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+################################### S O R T ####################################
+	. sort is a simple filter whose processing consist of sorting lines of text from its input
+	. For example:
+		sort datafile
+	   or
+	   	who | sort
+	. Note: Many novice shell programmers make the following mistake
+		sort file1 > file1 # this first erase the file1 and then tries to sort in an empty file resulting file1 empty
+		sort file1 >> file1 # this append the result from the sort in the file1 (file1 now contains its data + the result of the sort)
+	. The correct technique would be
+		sort file1 > file2
+		mv file2 file1
+		This tecnique applies not only to sort, but applies to any filter

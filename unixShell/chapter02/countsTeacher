@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+#
+#	First, all posible users. These are found in the file "/etc/passwd"
+#
+echo -e "Number of possible users on the system: \c"
+cat passwd | wc -l
+
+#
+#	Next, all users currently logged in (using "who")
+#
+echo -e "Number of users logged onto the system: \c"
+who | wc -l
+
+#
+#	Finally, the number of running processes (using "ps -e")
+#
+echo -e "Total number of processes running:      \c"
+ps -e | wc -l

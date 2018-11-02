@@ -1,0 +1,16 @@
+#!/usr/bin/sh
+#********************************************** NUMERICAL CALCULATIONS ****************************
+	. As mentioned before, the Bourne shell has no option of a number (only strings), and as such is incapable of doing numerical calculations.
+	. However, there is a UNIX program called "expr" which was designed specifically for this purpose.
+	. It works like this:
+		expr 3 \* 4
+		12
+	. With this tool, we can cause loops to repeat a certain number of times, as follows:
+		read count
+		i=1
+		while [ $i -le $count ]
+		do
+		        echo This is loop $i of $count
+		        i=`expr $i + 1`
+		done
+

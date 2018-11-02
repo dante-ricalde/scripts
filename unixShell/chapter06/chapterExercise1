@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+totalSize=0
+for file in `grep foo * -s -l`
+do
+	fileSize=`cat $file | wc -c`
+	echo The size of the file $file is $fileSize
+	totalSize=`expr $totalSize + $fileSize`
+done
+echo -e "\nThe total size of files that contain the word 'foo' is $totalSize"

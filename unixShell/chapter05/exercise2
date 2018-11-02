@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+# test with kk, ., /cygdrive/f/dante/hello dir names
+echo -e "Please, enter a directory name: \c"
+read directoryName
+if [ -z "$directoryName" ] # if [ "$dname" = "" ]
+then
+	echo "You didn't enter a directory name"
+elif [ -d $directoryName -a -w $directoryName ]
+then
+	echo "hello content" >> $directoryName/hello # echo Well done! > $dname/hello
+	echo "\"hello\" file has been created in directory $directoryName"
+else
+	echo You entered a invalid directory name # $dname is not a writable directory - nothing written
+fi

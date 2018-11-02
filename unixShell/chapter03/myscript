@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+echo "This is my script"
+greeting=Hello
+
+echo $greeting

@@ -1,0 +1,4 @@
+#!/usr/bin/sh
+# *********************************** C H A P T E R      E X E R C I S E S *******************
+	1. Create a script that examines all the files in the current directory and displays a total wich represents the sum of the sizes of each file that contains the word "foo"
+	2. Modify the course project such that the main menu is redisplayed after each action, until the user types "q"

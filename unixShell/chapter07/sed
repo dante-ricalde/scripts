@@ -1,0 +1,30 @@
+#!/usr/bin/sh
+######################################## S       E       D  ############################
+	. sed (short for "stream editor") is a program for performing basic editing tasks on the output of another program or on a file (similarly to sort, the file itself is not changed)
+	. the most basic form of sed is as follows:
+		sed action [files]
+
+	. sed can perform several actions at a time, as follows:
+		sed -e action1 -e action2 [files]
+		sed -f scriptfile [files] # sed examine scriptfile and performs all the action in it on the input files
+	. Actions specified on the command line are almost always enclosed in single quotes to prevent shell interpretation of special characters
+	. The most common "action" is text substitution (using regular expressions, if necessary):
+		s/foo/bar/ -> change the first occurrence of "foo" on each line to "bar"
+		sed 's/bash/Bourne Again Shell/' testfile
+		sed -e 's/bash/Bourne Again Shell/' -e s/false/ERROR/ testFile
+	. s/foo/bar/g -> change all occurrences of foo to bar
+	. A range of line numbers can be specified to restrict these actions:
+		1,10s/foo/bar/ or 40,$s/foo/bar/
+	. Note that $ refers to the last line in the file or the last line in the input
+	. Another common action is deleting lines
+		11,20d -> delete the second 10 lines of the input
+		/hopscotch/d -> delete all lines with hopscotch in them
+		sed '/bash/d' testFile
+		sed '1,98d' testFile
+	. It is also possible to delete all lines except for lines that match certain criteria:
+		3,$!d
+		sed '99,$!d' testFile
+		/ducks/!d
+	. Note this second option is similar to grep's action
+	. There are many more actions and options available in sed - check the man page for details
+	. who | sedscript # this execute sedscript file that contains sed commands on the who output

@@ -1,0 +1,20 @@
+#!/usr/bin/sh
+test -f /etc/passwd
+echo $? # 1
+
+test -f /123/456
+echo $? # 1
+
+test -d .
+echo $? # 0
+
+dir=/etc/garbage
+test -d $dir
+echo $? # 1
+
+test -w /etc/passwd
+echo $? # 1 -> this file doesn't exists
+
+test ! -w /etc/passwd
+echo $? # 0
+

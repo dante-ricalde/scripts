@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+filename=.
+while [ "$filename" ]
+do
+	if [ ! -d $filename ]
+	then
+		echo Must be a directory
+		read filename
+		continue
+	fi
+	if [ `ls $filename | wc -l` -gt 100 ]
+	then
+		echo stopping - There was a huge directory
+		break
+	fi
+	# process the directory
+	read filename	
+done

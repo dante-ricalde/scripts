@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+#********************************** C O U R S E     P R O J E C T ***********************
+	. Modify your contacts database script such that the user is presented with a menu of choices, as follows:
+		1. Create a record.
+		2. View records.
+		3. Search for records.
+		4. Delete records that match a pattern
+	. Use a case statement to determine what choice they made, and perform the appropriate code
+		. Ensure that you handle the case where the user doesn't enter anything or where they enter an invalid choice
+		. Choices 3 and 4 can do nothing for the moment.
+		. Remember that is it now possible to view the file before anything has been written to it.

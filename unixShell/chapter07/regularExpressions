@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+#************************************* R E G U L A R     E X P R E S S I O N S *************************
+	. grep stands for "global regular expression parser"
+	. A regular expression is a term used to describe a set of special text-matching patterns, for example:
+		. ^abc matches any line of text that begins with abc
+		. abc$ matches any line of text than ends with abc
+		. ^$ matches a blank line
+		. a* matches any sequence of zero or more a's
+		. a+ matches any sequence of one or more a's (you need to use -E option of grep because + is not part of the standard regular expressions, it's part of what we call extended regular expressions)
+		. c[aou]t matches cat, cot or cut (anything enclosed in the square brackets is used to match a single character)
+		. c.t matches a c, followed by any one character, followed by a t (a dot matches any single character, including a space, any character at all
+		. X[a-zA-Z0-9]*X matches any sequence (even zero-length) of letters or digits sorroundedby a pair of X's
+		. and many more - check the man page for grep or regexp
+		. Many programs use regular expressions, including:
+			grep
+			sed
+			awk
+			vi and ed/ex

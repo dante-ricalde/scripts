@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+if diff file1 file2 > /dev/null # The output of the diff program is not important, only the exit status, for that reason is redirected to /dev/null
+then
+	echo The files are the same
+	rm file2
+else
+	echo The files are different!
+	echo Please review the differences:
+	diff file1  file2
+fi

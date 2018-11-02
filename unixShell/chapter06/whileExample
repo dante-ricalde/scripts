@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+read answer
+while [ "$answer" != chickens ]
+do
+	echo The answer is incorrect
+	echo Please try again
+	read answer
+done

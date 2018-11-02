@@ -1,0 +1,2 @@
+if echo kk; then echo contains; else echo no contains; fi
+if grep ass chapterExercise1 > /dev/null; then echo contains; else echo no contains; fi

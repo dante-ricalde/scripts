@@ -1,0 +1,21 @@
+#/usr/bin/sh
+################## R U N N I N    A    S C R I P T    F R O M     W I T H I N      V I
+	. The following technique can dramatically speed up the script's development and testing phase if you are editing in vi
+	. While using vi, typing :! allows you to run any single UNIX command (including the script being edited)
+	. For example:
+		:!ls -l<ENTER>
+	. This exact command can be repeated at any time by typing:
+		:!!<ENTER> # this executes the last command executed
+	. If, for example, the file being edited was called myscript, the script could thus be tested by typing:
+		:!myscript<ENTER>
+	. A further shortcut offered by vi is that the name of the file currently being edited can be inserted into the command-line by typing the % character
+		:!chmod +x %<ENTER>
+		:!%<ENTER>
+
+################### Y O U R    P A T H    A N D    b i n ##############
+	. Many UNIX users like to write simple, personal shell scripts to help automate their daily routines
+	. These scripts are usually collected together and housed in a single directory, usually called bin and usually a sub directory of the user's home directory, namely most users create a sub directory of the home directory called bin and They place all those scripts into that directory
+	. Someway they will enable you to run any of those scripts from any directory on the unix system when you log in 
+	~/bin/l # the green files are executable and the blue ones are directories, this commnad created by me also lists the hidden files
+	. Once that directory (my home's bin directory) has been added to your PATH, these scripts can be run from anywhere while you are logged in.
+	. Recap: Your PATH is a shell variable containing a list of directories that the shell should look in to locate executable files (separated by ":"). It is typically set in your .profile

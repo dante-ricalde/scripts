@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+############################### CONTACT DETAILS PROGRAM EXERCISE #########################
+echo -e "Name: \c"
+read name
+echo -e "Address: \c"
+read address
+echo -e "Phone: \c"
+read phone
+echo "Name: $name" >> details.out
+echo "Address: $address" >> details.out
+echo "Phone: $phone" >> details.out
+echo
+echo "The details have been stored in \"details.out\""

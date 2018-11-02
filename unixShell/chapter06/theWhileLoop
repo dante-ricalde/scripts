@@ -1,0 +1,16 @@
+#!/usr/bin/sh
+#******************************************** T H E    W H I L E    L O O P **************************
+	. The while loop repeats the execution of a code block in the same way that the if statement conditionally executes a code block 
+	. The sintax for the while loop is as follows:
+		while command
+		do
+			code block
+		done
+	. The given code block will be repeatedly executed until the given command returns an exit status that is non-zero.
+	. It is actually possible to use a while loop to process each line of the output of a command (in other words to execute a code block once for each line of the output of a command).For example:
+		who | while read user term time
+		do
+			echo $user has been on $term since $time
+		done
+		
+

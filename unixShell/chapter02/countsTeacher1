@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+#
+#	First, all posible users. These are found in the file "/etc/passwd"
+#
+ps -e | wc -l

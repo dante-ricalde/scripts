@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+for fname in *.txt
+do
+	[ -s $fname ] && cp $fname backups
+done

@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+wc textProcessing
+wc *
+#wc # It is going to wait you enter some text from keyboard, press CTRL + D to finish
+echo get input from other program
+who | wc
+echo ls is not a filter
+ls *

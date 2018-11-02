@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+echo "Please enter your personal data:"
+echo -e "Name: \c"
+read name
+echo $name
+echo -e "First Name: \c"
+read firstname
+echo $firstname
+echo -e "Last Name: \c"
+read lastname
+echo $lastname

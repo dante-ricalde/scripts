@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+	. To run the file as a program, simply type:
+		./myscript
+	. If the directory that contains the script is in your PATH, this can be abbreviated further to:
+       		myscript
+	. If you put ":" at the beginning or at the end of the PATH, your current directory is added to the PATH
+		example:
+			PATH=:$PATH
+			echo $PATH 
+					:/usr/local/bin:/usr/bin:/cygdrive/c/ProgramData/Oracle/Java/javapath:/cygdrive/c/Program Files (x86)/Intel/iCLS Client:/cygdrive/c/Program Files/Intel/iCLS Client:/cygdrive/c/windows/system32:/cygdrive/c/windows:/cygdrive/c/windows/System32/Wbem:/cygdrive/c/windows/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/DAL:/cygdrive/c/Program Files/Intel/Intel(R) Management Engine Components/DAL:/cygdrive/c/Program Files (x86)/Intel/Intel(R) Management Engine Components/IPT:/cygdrive/c/Program Files/Intel/Intel(R) Management Engine Components/IPT:/cygdrive/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/cygdrive/c/Program Files/Intel/WiFi/bin:/cygdrive/c/Program Files/Common Files/Intel/WirelessCommon:/cygdrive/c/Program Files/nodejs:/cygdrive/c/Program Files/Java/jdk1.8.0_112/bin:/cygdrive/f/apache-maven-3.3.9/bin:/cygdrive/c/WINDOWS/system32:/cygdrive/c/WINDOWS:/cygdrive/c/WINDOWS/System32/Wbem:/cygdrive/c/WINDOWS/System32/WindowsPowerShell/v1.0:/cygdrive/c/Program Files (x86)/Brackets/command:/cygdrive/c/Program Files/Git/cmd:/cygdrive/c/Users/Dante Ricalde/AppData/Local/.meteor:/cygdrive/c/Users/Dante Ricalde/AppData/Roaming/npm:/cygdrive/c/Users/Dante Ricalde/AppData/Local/Microsoft/WindowsApps:/cygdrive/c/Program Files (x86)/Microsoft VS Code/bin
+
+		        Then like the colon (:) character is at the beginnig of the PATH, your current directory is added to the PATH. Hence you could only write the name of the script to execute it: 
+				myscript

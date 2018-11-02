@@ -1,0 +1,39 @@
+#!/usr/bin/sh
+######################################### T R U E     A N D     F A L S E #####################################
+	. When every UNIX command completes, it invisibly returns a value to the program that started it (usually the shell) informing that program of the "status" of completion of the command.
+	. This value is a number, and is known as the exit status of a command
+	. This value is usually ignored (by the shell and by the user)
+	. Typically, an exit status of 0 means that the program completed with no error conditions arising. while an exit status of some other number means that some error has ocurred
+	. This exit status (of the last command) is stored in the built-in variable called "?", and can be examined at any time with the command:
+		echo $?
+	. The contents of this variable are updated every time a program runs (including the "echo" command above)
+	. It is often useful for shell programmers to think of an exit status of 0 as being equivalent to the logical term "True", and for any other exit status to be equivalent to "False"
+	. Note that this is exactly the opposite to the way some programming languages (e.g. C) treat true and false
+	. There even exist UNIX programs called "true" and "false" that demonstrate the use of these conventions.
+		true -> produces an exit status of 0
+		false -> produces an exit status of 1
+
+###################################### C O N D I T I O N A L     C O M M A N D     E X E C U T I O N #####################
+	. It is possible to specify that a command in a script will only run if particular condition is met
+	. Such conditions are always expressed in terms of the exit status of another program, as follows:
+		command1 && command2 # means that command2 will only run if command1 completes with an exit status of 0
+		
+		e.g.: ls ILeftAt.txt && ls chapter04/ # if ILeftAt.txt exits, the second command (ls chapter04) is executed, otherwise not. 
+
+
+		command3 || command4 # means that command4 will only run if command3 completes with an exit status that is not 0
+
+		e.g: ls kk || ls chapter04 # the second command will execute because the file kk doesnt't exists, if kk file would exist the second command "ls chapter04" wouldn't never execute
+
+		ls file1 && cp file1 /tmp # run the "ls" program to check if fil1 exists, if it does copy it to the /tmp directory
+		cp abz xyz && echo The file was copied okay # if the copy was succeded then put out a message saying that the file was copied ok.
+		diff fileA fileB || echo The files are different # if the files are different (the diff program produces 1) the "echo" command is executed, otherwise the "echo" command is not executed
+		ls file2 || exit # if the file was not there you will "exit", otherwise you will continue with the execution of the program
+	
+	. The only problem with these constructs is that they are very limited:
+
+		. You can only perform one command if the condition is met (however, it is possible to group commands using parenthesis)
+		. You cannot specify a second command to be run if the condition is not met
+			e.g.
+			ls file1 && cp file1 /tmp # you only copy if the file1 exists, but if it doesn't exists you can't specify to execute another command using "&&" or "||" (like print an error msg in case the file doesn't exist)
+			

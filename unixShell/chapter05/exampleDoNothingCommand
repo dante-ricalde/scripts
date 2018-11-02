@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+if ls file1 > /dev/null
+then
+	:	# ":" is the "do nothing" command
+else
+	echo The file does not exits - exiting ...
+	exit
+fi

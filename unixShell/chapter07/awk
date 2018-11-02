@@ -1,0 +1,11 @@
+#!/usr/bin/sh
+######################################## A       W       K  ############################
+	. awk (which stands for Aho, Weinberger and Kernighan - its creators) is a text-processing tool and programming language. It is capable of virtually any conceivable text processing
+	. As with sed, its simple usage is as follows:
+		awk action [files]
+	. Where action is a sequence of statements enclosed in { }, each separated by a semicolon (;). For example:
+		who | awk '{print $1, "is on terminal", $2}'
+		cat who | awk '{print $1, "is on terminal", $2}' # print prints the 3 params: $1, "is on terminal", $2 separated by spaces
+	. $1, $2, $3, etc are the tokens from each line of input. Tokens are separated by spaces and tabs.
+	. With the -F option, it is possible to specify the character(s) used to separate tokens:
+		awk -F : '{print $1, "home:", $6}' /etc/passwd

@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+echo -e "The current directory is: \c"
+pwd
+echo 
+echo The contents of the directory are:
+ls -C
+echo
+echo The current date and time is:
+date
+echo
+echo -n "Please enter your name: "
+read name
+echo Hello $name, how are you?

@@ -1,0 +1,7 @@
+#!/usr/bin/sh
+if diff file1 file2 > /dev/null
+then
+	echo The files are the same
+	rm file2
+	exit
+fi

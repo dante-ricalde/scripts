@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+L I N E      C O N T R O L
+	. It is possible to run two or more UNIX commands on the same line in a shell script, by separating the commands with the ; (semicolon) character
+	For example:
+		echo Please enter your Name: ; read name # to check that it worked do: echo $name -> it prints Dante
+		pwd; ls
+	
+	. For aesthetic reasons, you may wish to split a command line over more than one line of text. This is achieved by quoting the newline character, using either single quotes, double quotes or the backslash character
+		echo This is an echo command "
+		> and this is a new line of the echo
+		> and this is the second line
+		> "
+
+		echo This command is split \
+		> over several lines
+
+		result => This command is split over several lines
+		# This command will actually end in the second new line which will be after the word "lines"

@@ -1,0 +1,24 @@
+#/usr/bin/sh
+echo -e "Please enter a rock group name: \c"
+read rname
+
+case $rname in
+	[bB]eat*|"The Beatles")
+		no_albums=12
+		last_album="Let it Be"
+		;;
+	"Dire Straits")
+		no_albums=7
+		last_album="On Every Street"
+		;;
+	Abba)
+		no_albums=6
+		last_album="Abba Gold"
+		;;
+	*)
+		echo Unknown rock group
+		exit
+		;;
+esac
+
+echo $rname made $no_albums albums. The last one was called \"$last_album\"

@@ -1,0 +1,59 @@
+#!/usr/bin/sh
+###################################### U S I N G     T E S T #################################
+	. Many programming languages support the notion of comparing two values (i.e. comparing two variables, or comparing a variable with a value) and do sth based on the result of the comparison
+	. The values may be compared and checked for:
+		. equality
+		. inequality
+		. one is greater than the other
+		. or less than, etc
+	. The Bourne shell does not natively support such comparisons, but there is another UNIX program, called test, that does. test is used extensively in shell script development
+	. test is used as follows:
+		var1=10
+		test $var1 = 20
+		echo $?
+		1
+		# test does not produce any output. Test change the exit status according to the result of the comparison
+	. The sole purpose of test is to return an exit status appropriate to the condition being tested. This exit status is consistent with the notion of true and false. In other words, in the above example, $var1 = 20 is considered to be false (1)
+	. test was specifically designed for use with the if statement:
+		if test $var1 -gt $max
+		then
+			echo That value is too large
+		fi
+	. Notes:
+		. In the test $var1 = 20 example, you must have spaces around both sides of the "=" (contrast with the Assigning Variables!)
+		. If a variable has not been set, or is set to noting (e.g. x=), then checking this variable using test will cause a syntax error. This can be remedied by enclosing the variable in double quotes:
+
+			test "$var1" = 20
+	. test has many useful options:
+		test value1 = value2
+			returns true (0) if the values are equal
+		test value1 != value2
+			returns true (0) if the values are different
+
+		test value1 -gt value2
+			returns true (0) if the value1 and value2 are both integer (numeric) values and value1 is greater than value2. Similar options include -lt (less than), -ge (greater than or equal to), and -le (less than or equal to)
+			# if one of those values is not numeric, you will get an error message
+		test value
+			returns true (0) if the value is non-empty, in other words if the variable has been set to sth. If this test is executed befora a comparison, you won't really need to enclose the var in doubles quotes in the comparison
+		test -z value
+			returns true (0) if the value is empty (zero-length)
+	. test also offers many useful options for checking files and directories:
+		test -f filename
+			returns true (0) if the given file exists and is a regular file (i.e. not a directory, device, etc)
+		test -d filename
+			returns true (0) if the given file exists and is a directory (if it's a regular file it will return false)
+		test -s filename
+			returns true (0) if the given file exists and has a file-size greater than 0 (it doesn't test if it's a regular file or a directory, it actually tests its size. Directories too can have a size)
+		test -r|w|x filename
+			returns true (0) if the given file exists and is readable | writable | executable by the current process (sometimes the file is writable but is not writable by this shell script and then you'll get a false value)
+			
+####################################################################
+	. The following options can be used in combination with the options mentioned above
+		test ! expression
+			returns true (0) if the expression is considered false (expression is one of the options mentioned above)(the "!" character is read as "not")
+		test expression1 -a expression2
+			returns true (0) if the both expressions are true (and)
+		test expression1 -o expression2
+			returns true (0) if the either expression is true (or)
+	. Interestingly, another name (alias) for test is "[", meaning that our earlier example could have been written:
+		

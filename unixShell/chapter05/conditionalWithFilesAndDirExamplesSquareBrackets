@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+echo -e "Please enter a filename: \c"
+read fname
+
+if [ -z "$fname" ]
+then
+	echo You dit not enter a filename
+elif [ -f "$fname" -a -w "$fname" ]
+then
+	echo Everything is fine with file "$fname"
+else
+	echo The file "$fname" is not a writable file
+fi

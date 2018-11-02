@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+name="Fred Smith"
+name1="That's Life"
+
+echo $name
+echo $name1
+echo $age
+
+myname=Joe
+echo "Hello $myname, today's date 
+is `date +%d/%m/%y`"
+
+( date; pwd; ls -laht; who -a) | more

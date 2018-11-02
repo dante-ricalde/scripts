@@ -1,0 +1,10 @@
+#!/usr/bin/sh
+#************************************** G R E P *****************************
+	. grep, in its simplest form, is a program that displays lines of text from its input that contain a certain pattern
+	. Put another way, it removes - or filters out - lines of text from its input that do not contain the pattern (grep is thus a filter in every sense of the word)
+	. Its usage is as follows:
+		grep pattern [files]
+	. For example:
+		grep sincerely *.txt
+			or
+		who | grep root

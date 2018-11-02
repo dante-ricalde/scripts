@@ -1,0 +1,6 @@
+#!/usr/bin/sh
+####################################### T H E    E C H O    C O M M A N D ************************
+
+	. echo is a shell built-in command
+	. Its function is simple: to write its command-line parameters to Standard Output. If no parameters are given, a blank line (carriage-return) is output
+        . It is primarily used to display messages to the users of the script	

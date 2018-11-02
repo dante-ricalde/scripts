@@ -1,0 +1,28 @@
+#!/usr/bin/sh
+****###################################### T E S T     P R O C E S S I N G ********************************
+***** A B O U T    F I L T E R S
+	. A filter is a UNIX command-line program that has the following properties:
+		1. It takes either standard input or the contents of one or more files
+		2. It performs some processing on the above data
+		3. It produces output based upon that input, output which is the result of the processing of the input
+
+	. For example, wc is a filter. The processing it performs is counting lines, words and characters. The output it produces is the numbers that represent those counts.
+
+	. ls, however, is not a filter, because it takes no input
+	. If you can pipe information from one program into this program and use that information in some meaninful way, then this program is a filter, otherwise no.
+	. Filters are used to process the data produced by other programs and the data in files
+
+****** C O M M O N    F I L T E R S
+	. The following programs are filters that are used regularly in UNIX shell scripting:
+		FILTER		PROCESSING DONE TO STANDARD INPUT
+		cat		None
+		more		Pagination
+		grep 		Removal of lines that do not contain certain text
+		sort		Sorting
+		wc		Counting of lines, words and/or characters
+		tee		Duplication - write to files and screen (write to both at the same time)
+		sed		Basic editing
+		Awk		Anything
+
+
+	

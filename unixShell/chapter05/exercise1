@@ -1,0 +1,13 @@
+#!/usr/bin/sh
+retirement_age=65
+echo -e "How old are you? \c"
+read age
+if [ -z "$age" ] # if [ "$age" = "" ]
+then
+	echo You did not enter a age
+elif [ $age -gt $retirement_age ]
+then
+	echo You sould be retired
+else
+	echo You are still quite young
+fi

@@ -1,0 +1,93 @@
+#!/usr/bin/sh
+#	The above line causes this script to be run using the Bourne Shell (sh)
+###################################################################################
+#
+#	Script to maintain a contacts database.
+#
+###################################################################################
+
+#
+#	Define the name of the file
+#
+fname=names.dat
+
+#
+#	If the file does not exists, create it
+#
+[ ! -f $fname ] && > $fname
+
+#
+# Display the menu
+#
+clear
+echo -e "\n\t\tSHELL PROGRAMMING DATABASE"
+echo -e "\t\t\tMAIN MENU"
+echo -e "\nWhat do you wish to do?\n"
+echo -e "\t1. Create records"
+echo -e "\t2. View records"
+echo -e "\t3. Search for records"
+echo -e "\t4. Delete records that match a pattern"
+echo
+
+#
+#	Prompt for an answer
+#
+echo -e "Answer? \c"
+read ans junk
+
+#
+#	Decide what to do
+#
+case "$ans" in
+	1)
+		#
+		# Read in the contact details from the keyboard
+		#
+		echo "Please enter the following contact details:"
+		echo
+		echo -e "Given name: \c"
+		read name
+		echo -e "   Surname: \c"
+		read surname
+		echo -e "   Address: \c"
+		read address
+		echo -e "      City: \c"
+		read city
+		echo -e "     State: \c"
+		read state
+		echo -e "	Zip: \c"
+		read zip
+
+		#
+		#	Write the details to the text file
+		#
+		echo $name:$surname:$address:$city:$state:$zip >> $fname
+		;;
+	2)
+		#
+		# Show what's currently in the file
+		#
+		(
+			echo 
+			echo Here are the current contacts in the database:
+			echo
+			cat $fname
+		) | more
+
+		#
+		# And display how many there are
+		#
+		echo
+		echo There are `cat $fname | wc -l` contacts in the database
+		;;
+	3)
+		echo The Search case is not implemented yet
+		;;
+	4)
+		echo The Delete case is not implemented yet
+		;;
+	*)
+		#echo "That was an invalid choice^G"
+		echo -ne 'That was an invalid choice\007'
+		;;
+esac

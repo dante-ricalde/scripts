@@ -1,0 +1,18 @@
+#!/usr/bin/sh
+G R O U P I N G     C O M M A N D S
+	. Consider the various actions that may be applied to a command:
+		- Run the command in the background (via the & character)
+		- Redirect the output to a file or another program (> and |)
+		- etc
+	. If you wish to apply the same action(s) to several consecutive programs, it is possible to group the programs together and apply the action to the group, as follows:
+		( echo the date is 
+		date ) > output_file # after the 'is' you need to press Enter (this is a command in two lines)
+	       # result -> the date is 
+       			   02 Mar 2017 08:33:55
+	    	The way is done is enclosed this two unix commands inside round brackets or parentheses and then that whole thing from the first open parentheses to the last close parenthesis can be considered to be a single command and then of course you can do with that what you will, you can redirect the output somewhere else or you can run that asynchronously in the background or whatever and you can put as many commands as you like inside the round brackets and the same action will be applied to every single command.
+
+		( Enter
+		> pwd Enter
+		> ls Enter
+		> who Enter
+		> ) &

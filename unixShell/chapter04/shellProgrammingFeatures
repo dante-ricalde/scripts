@@ -1,0 +1,38 @@
+#!/usr/bin/sh
+S H E L L    V A R I A B L E S
+	. Variables are small, named pieces of memory that can be assigned values. For example:
+		month=August
+	. These values can change
+	. Variables can be thought of as "boxes" that can contain "contents"
+	. Variables names:
+       		- Must be unique
+		- Can only contain the characters:
+			a-z, A-Z, 0-9 and "_"
+		- Must not begin with a digit
+		- Are case sensitive (month is a different variable from Month)
+	. (For experienced programmers: All shell variables are strings)
+	. Values may be assigned to a variable by use of the "=" sign, for example:
+		sport=basketball
+	. There must be no spaces on either side of the "="
+	. If you need to assign a value that contains spaces to a variable, use the " character. For example:
+		street="Smith Avenue"
+	. To retrieve the contents of a variable, use the "$" sign before the variable name:
+		echo You live on $street
+
+
+E N V I R O N M E N T    V A R I A B L E S
+	
+	. Many shell variables are "inherited" from the login shell environment. In other words, they are preset variables
+	. For example, when running a script the following variables will be available (amongst others):
+		- HOME -> it represents your home directory
+		- PATH -> it represents the list of directories in which to search for command names
+		- LOGNAME -> it represents the person who is currently logged in to this particular shell session
+		- TERM -> it represents the terminal type you are currently using
+	In other words, all that information is available to you in your shell script usually. There's no guarantee that any of those variable is going to be set in a given shell script but usually your are finding the most of they are.
+	. Such variables may be changed by the script, but the changes will not be seen by the login shell unless the script was run using the "." operator. The changes will have a duration of the life of the script, in other words when the script finishes the changes that you made will disappear, the login shell that caused these environment variables to exist as well as any subsequence shell scripts that you call using that script will see the original values of those variables not the changed values.
+	. When you create a new variable, the variable is not "visible" to other programs (including other scripts) unless the variable has been added to the environment.
+        . A variable is added to the environment by using the "export" command:
+		month=January
+		export month
+			Now what happens at that point is the variable called month is added to the environment and what that means is that any subsequent program that is started by this particular shell will know of the existence of the variable called month. Let me tell you what that does not mean: If you put those two lines into a shell script and you run that shell script in the normal way not using the "dot" operator, the variable called month will be added to the environment of the shell script that is running but it will not be added to the login shell environment which means that any subsequent shell scripts that you run will not know the existence of the month variable. If you want to add the month variable to the environment of the login shell you actually have to run those two lines you have to enter those two lines into the login shell prompt or if they are in a script you have to run that script using the "dot" operator which will cause any statements in that script of course remember to be executed by the login shell which will mean of course that the month variable be added to the environment of that login shell.
+			So the importance of the environment is significant if you add a variable to the environment of a given shell then that variable will be available to any script that is run from that shell onwards and remember of course that is all been done using the export command.

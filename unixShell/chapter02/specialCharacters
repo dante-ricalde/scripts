@@ -1,0 +1,30 @@
+#!/usr/bin/sh
+###################### S P E C I A L     C H A R A C T E R S ##########
+	. The following characters have a special meaning to the shell:
+		& * ? [ ] < > | ( ) ` # $ ^ = ' " { } ; \
+	. These special characters should be avoided when naming files.
+	. Note that it is never possible to give a file a name that includes the / character (although this character is not special to the shell)
+	. If it ever becomes necessary to pass one of these characters as a parameter to another program, of of three actions is required:
+		- Prefix the character with a \ (for example, \$)
+			echo The fee is $10 # The result is: fee is 0 because $10 is considered a variable (a special character) by the shell
+			echo The fee is \$10 # The result is: The fee is $10	
+			echo "The fee is $10" # The result is: The fee is 0
+			echo "The fee is \$10" # The result is: The fee is $10
+		- Sorround the character with a pair of " characters (for example "#"). Note, this doesn't work for all characters.
+			echo The fee is "$"10 # The result is: The fee is $10
+			echo comments begin with a # character -> The result is: comments begin with a
+			echo "comments begin with a # character" -> The result is: comments begin with a # character
+			echo comments begin with a "#" character -> The result is: comments begin with a # character
+		- Sorround the character with a pair of ' characters (for example '$'). This works for all characters except '
+			echo The fee is '$'10 -> The result is: The fee is $10
+			echo "The fee is '$'10" -> The result is: The fee is '$'10. As you can see this doesn't work
+			echo 'The fee is $10' -> The result is: The fee is $10
+
+###################### C O M M E N T S **************************************
+	. A comment is a piece of human-readable text added to a script to make the code more understandable
+	. A comment is any part of a line of a script that follows the # character
+		For example:
+			# Count the number of users on the system
+			who | wc -l 	# wc means "word count"
+	. Comments are an important part of software development - their use dramatically cuts down on maintenance time and costs.
+	. You are strongly encouraged to comment all your code.

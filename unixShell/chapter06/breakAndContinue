@@ -1,0 +1,5 @@
+#!/usr/bin/sh
+#*********************************** b r e a k    a n d    c o n t i n u e ***************
+	. The break and continue statements can be used to further control the execution of any loop (not just the while loop).
+	. The break statement will cause the loop to immediately terminate. Execution will recommence with the next line after the done.
+	. The continue statement will cause the loop to abandon the current iteration of the loop and begin the next one (the loop condition is retested).

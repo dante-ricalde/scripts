@@ -1,0 +1,41 @@
+#!/usr/bin/sh
+var1=10
+max=9
+test $var1 = 20
+echo $?
+
+
+if test $var1 -gt $max
+then
+	echo That value is too large
+fi
+
+
+x=
+test $x = 20 # We will get an error because x has not been set to a value
+#echo $?
+
+# solution for this
+test "$x" = "20"
+echo $?
+
+# another solution for this
+test "$x" = 20
+echo $?
+
+# using test value, we don't need to enclose the var in double quotes
+if test $x
+then 
+	if test $x = 20
+	then
+		echo The value is 20
+	fi
+else
+	echo The var "x" has not been set to a value
+fi
+
+# using -z to check if the value is empty
+if test -z $x
+then
+	echo The value x is empty
+fi

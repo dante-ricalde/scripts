@@ -1,0 +1,3 @@
+HOME=xyz
+echo $HOME
+

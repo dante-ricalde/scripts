@@ -1,0 +1,14 @@
+#!/usr/bin/sh
+C O U R S E       P R O J E C T
+	
+	. For the ramainder of this course, we will be developing a course project - an application for tracking people's contact details, such as their name and address
+
+		. This will be a menu-based program, with a main screen offering the user options to create, view, search for and delete contact details.
+		. All the details will be stored in a text file
+	. Here are the specifications for the initial phase of the project:
+		. The program will prompt the user for six items of data:
+			. First name, Surname, Address, City, State, Zip
+		. This information will be appended to the end of a text file, all on one line, separacted by the ":" character
+		. There will be a variable called "fname" that will store the name of the file into which all this information will be written. The value of this variable can be sth like names.dat
+		. Before the program exits, it will display the contents of the file, as well as a count of the number of records in the file.
+		. The project will be fully commented

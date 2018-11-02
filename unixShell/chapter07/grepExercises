@@ -1,0 +1,23 @@
+#!/usr/bin/sh
+grep sincerely *.txt
+who | grep root
+echo grep ^abc in all files
+grep ^abc *
+echo grep lines that start with abc in the file abcFile
+grep '^abc' abcFile
+echo search for lines that have abc anywhere like this
+grep abc abcFile
+echo search for lines that end with abc in the file abcFile
+grep abc$ abcFile
+echo search for how many people using sh as their shell
+grep '/sh$' abcFile
+echo "search for lines that have a c followed by zero or more a's followed by a t"
+grep 'ca*t' abcFile
+echo "search for lines that have a c followed by one or more a's followed by a t"
+grep -E 'ca+t' abcFile
+echo "search for lines that have cot or cut anywhere"
+grep 'c[ou]t' abcFile
+echo "search for lines that have a c followed by zero or more o's or u's followed by a t"
+grep 'c[ou]*t' abcFile
+echo "search for linews that have a c followed by zero or more any character"
+grep 'c.*t' abcFile

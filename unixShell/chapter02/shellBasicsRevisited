@@ -1,0 +1,36 @@
+#!/usr/bin/sh
+############# S H E L L    B A S I C S    R E V I S I T E D ##########
+	. Standard Output of any program (including scripts) can be redirected to a file using >. For example:
+		who > userlist
+		ls > filelist
+	. Standard Output of any program can be appended to the end of a file using >>. For example:
+		cat /etc/passwd >> userlist
+	. Standard Output of any program can be "piped" to the input of any other program using |. For example:
+		who | wc -l # print the number of users who are loged into the system
+		cat userlist | wc -l
+		CTRL + D # Ctrl D, is the character in unix (in all programs in unix) that means I have finished typing in its normal input (you can think of that as a normal file character)
+		who | wc > usercount
+		cat userlist | wc > usercount
+	. Standard Input may be read from any file using <.
+		script < answer_file
+	. Standard Error is a separate output stream from Standard Output, and my be redirected to a file using 2>. For example:
+		find . -name fred.txt > results 2> errors
+		ls -laht *.txt > results 2> errors
+		ls userlist xyz
+		# In these examples the results from the commands go to the file "results" (for example the list of files) and the error messages go to the file "errors" (for example the message indicating the file 'xyz' doesn't exists)
+		# This way you will se no output on the screen whatsover.
+	. Standard Output and Standard Error can be directed to the same file as follows:
+		backup > results 2>&1
+		ls userlist xyz > filelist 2>&1 # If you print the contents of the filelist file you will se both the error message (ls: cannot access 'xyz': No such file or directory) and the output message (userlist).
+	. There is a special file on the computer called /dev/null where any sort of output either standard output or standard error could be redirected if you don't need it.
+		find . -name mark.doc 2> /dev/null # the results of the command would appear on standard output while the erros would be sent to /dev/null which means that they would effectively just vanish. They know this like a great black hole, if you write some information there you'll never see it again
+		ls userlist xyz > /dev/null 2>&1 # instead of sending the results to the filelist file, are sent to /dev/null; and I get no ouput on the screen whatsover. It is not actually possible to examine the contents of /dev/null because it is not a normal file. If I do a ls -l /dev/null I find that it is a special character device (by the very first letter C of the ls -l listing)
+	       		A Character Device is one with which the Driver communicates by sending and receiving single characters (bytes, octets).
+	. Commands may be run asynchronously ("in the background") by using &. For example
+		nohup backup &
+	. To run sth asynchronously means to run in the background and what that means is if the program is going to take some time to run then you get your shell prompt back immediately while the program continues to run which means of course that you can do a couple of things at once. An example of this is if you had "backup" command that you wanted to run and you wanted to use the "nohup" command to run it, "nohup" incidentally is a command that allows you to run any other program and if you log off after you have started a program using nohup, then that program will no be killed when you log off, this obviously makes the assumption that you knew about the fact that if you're running a program and then you log off then that program will usually be killed, you can use "nohup" to prevent that. Anyway the purpose of this example is to show you that if you put an anpersan (&) on the end of the command line then you will get your prompt back immediately.
+
+		sleep 1000 # It just sits there doing nothing, if I wait for 1000 seconds I'll get my prompt back. In the meantime I'll just type CTRL+C which will interrupt it.
+		sleep 1000 & # It's still going to sleep 1000 seconds, that program is going to run for quite some time but notice I get my prompt back immediately. I also get a little number of output there 16165 which is the process ID of the process that I've just started that's running in the background and I can use "ps" to check that that is in fact running. (I execute "ps" and there is one 16165, is my sleep program and in a thousand seconds that program will end and then if I did a "ps" at that point I would fine that program has dissapeared because it finished.)
+
+	. Whe using the command shell, prefixing a command with "nohup" prevents the command from being aborted if you log out or exit the shell. The name "nohup" stands for "no hangup". The hangup(HUP) signal, which is normally sent to a process to inform it that the user has logged off (or "hung up"), is intercepted by "nohup", allowing the process to continue running.

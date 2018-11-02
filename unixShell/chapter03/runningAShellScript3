@@ -1,0 +1,25 @@
+#/usr/bin/sh
+################## S C R I P T    I N T E R P R E T E R S #########################
+	. The Bourne shell is not the only program that can be used to run scripts. Other include:
+		- The C shell (csh)
+		- sed
+		- awk
+		- perl
+		- tcl
+		- and many others
+	. Of course, each interpreter has its own syntax, language and features
+	. When you type in the name of a script on the command-line, the following actions are taken by your shell:
+		1. The file is located and opened
+		2. The first few characters are examined to determine what type of executable it is (binary or script)
+		3. If it is a script (and not interpreter is specified), the shell attempts to interpret and run the script
+	. It may be that your login shell is the C shell, and the script you are trying to run was written for the Bourne shell (or viceversa)
+	. It is also possible the script could be a perl script
+	. To enable the shell to know what program should be run to interpret the script, the script interpreter may be specified on the first line of the script, in the following manner:
+		#!/bin/csh
+	or
+		#!/usr/local/bin/perl
+	. We haven't been specifying these line in our script but We have been lucky because we are only trying to run born shell scripts using the born shell login shell.
+	. As we are writing Bourne shell scripts, it is strongly recommended that you add the following line to the top of every script you write:
+		#!/bin/sh
+		If you don't put this, your script will no run correctly if it is started for someone who is not using the bourne shell as the login shell.
+	. This tecnique is absolutely essential for CGI programming for web.
