@@ -1,8 +1,8 @@
-#!/usr/bin/sh
+#!/bin/sh
 #
 #	Rotate program log files
 #
-cd /cygdrive/f/dante/cursosGratuitos/unixShell/chapter01
+cd /home/dante/repos/scripts/unixShell/chapter01
 
 rm program.log.6   # This is redundant
 mv program.log.5 program.log.6

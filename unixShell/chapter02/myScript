@@ -1,0 +1,50 @@
+#!/bin/bash
+echo The current directory is:
+pwd
+echo 
+echo The contents of the directory are:
+ls -C --color='always'
+echo
+echo The current date and time is:
+date
+
+echo Please enter your name:
+read name
+echo Hello $name, how are you?
+
+echo -n "Please enter your name: "
+read name
+echo Hello $name, how are you?
+
+
+echo "-e is for supressing special characters"
+echo -e "Another way of supressing the new line. Please enter your name: \c"
+read name
+echo Hello $name, how are you?
+
+
+echo -e 'Another way of supressing the new line and special character. Please enter your name: \c'
+read name
+echo Hello $name, how are you?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

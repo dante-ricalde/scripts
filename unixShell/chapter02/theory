@@ -1,0 +1,2 @@
+If you add a colon (:) to the right or left part of the PATH, the current directory is added to the PATH
+	PATH=$PATH:

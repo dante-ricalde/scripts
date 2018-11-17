@@ -1,0 +1,4 @@
+#!/bin/sh
+echo "Please enter your name: \c"
+read name
+echo Hello $name
